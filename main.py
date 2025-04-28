@@ -1,4 +1,4 @@
-t import sqlite3
+import sqlite3
 from http_serwer import SimpleHandler
 from warnings import catch_warnings
 import sql_connector
@@ -23,7 +23,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 def run(server_class=HTTPServer, handler_class=SimpleHandler, port=8080):
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
-    print(f'Serwer działa na porcie {port}...')
+    print(f'Serwer raczej działa na porcie {port}...')
     httpd.serve_forever()
 run()
 
