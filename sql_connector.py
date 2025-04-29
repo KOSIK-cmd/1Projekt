@@ -1,6 +1,7 @@
 import sqlite3
 conn = sqlite3.connect("database.sqlite")
 cursor = conn.cursor()
+
 def addCustomer(firstName, lastName,email,phone):
     cursor.execute("INSERT INTO Customers (FirstName,Lastname,Email,Phone) VALUES (?,?,?,?)",
                 (firstName, lastName, email, phone))
@@ -13,6 +14,7 @@ def deleteCustomer(customerID):
     cursor.execute("DELETE FROM Customers WHERE CustomerID = ?",(customerID,))
     conn.commit()
     return
+
 def selectCustomerByID(customerID):
     cursor.execute("SELECT * FROM Customers WHERE CustomerID = ?",(customerID,))
     return cursor.fetchall()
